@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Article with Styled Images</title>
+  <style>
+  body{
+  background-color:#e84338;
+  margin:0;
+  padding:0;
+  }
+    .article-container {
+      max-width: 500px;
+      margin: auto;
+      font-family: 'Segoe UI', sans-serif;
+      line-height: 1.5;
+      padding: 20px;
+    }
+
+    .styled-image {
+      width: 100%;
+      max-width: 600px;
+      border: 4px solid #3498db;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: block;
+      margin: 20px auto;
+    }
+
+    .styled-image:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .image-caption {
+      text-align: center;
+      font-style: italic;
+      color: #555;
+      margin-top: -10px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="article-container">
+  <h1>The Beauty of Nature</h1>
+  <p>Nature has always inspired humans with its mesmerizing beauty. From lush green forests to serene oceans, the Earth offers a canvas of tranquility and power.</p>
+
+  <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb" alt="Scenic Nature" class="styled-image">
+  <div class="image-caption">A peaceful sunrise in the mountains (Image: Unsplash)</div>
+
+  <p>Exploring the natural world allows us to reconnect with the roots of our being. Scientific research even shows that spending time in nature can improve mental health and cognitive function.</p>
+</div>
+
+</body>
+</html>
