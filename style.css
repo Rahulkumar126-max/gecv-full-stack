@@ -1,0 +1,44 @@
+body.bg {
+  background-image: url('background.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
+  font-family: Verdana, sans-serif;
+  padding: 20px;
+}
+p{
+	color:#cadbce;
+}
+h1{
+	color:black;
+	text-decoration:underline;
+	background-color:#34eb64; display:inline-block;
+}
+p{
+	font-family: Verdana;
+}
+nav {
+  background-color: rgba(0, 100, 0, 0.6);
+  padding: 10px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+  margin: 0 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: yellow;
+  text-decoration: underline;
+}
+
+img {
+  margin-top: 20px;
+  border-radius: 12px;
+  border: 3px solid white;
+}
