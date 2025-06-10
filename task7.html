@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Table</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            margin: 20px auto;
+        }
+        th, td {
+            border: 1px solid #444;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #ddd;
+        }
+    </style> 
+	<style>
+	body{background-color: red;}
+	</style>
+</head>
+<body>
+
+<h2 style="text-align:center;">Student Information Table</h2>
+
+<table>
+    <tr>
+        <th rowspan="2">Name</th> <!-- Rowspan: Extending Name over 2 rows -->
+        <th colspan="2">Details</th> <!-- Colspan: Merging 2 columns under Details -->
+    </tr>
+    <tr>
+        <th>Registration No</th>
+        <th>CGPA</th>
+    </tr>
+
+    <!-- Using rowspan for students with same name -->
+    <tr>
+        <td rowspan="2">Ravi Kumar</td>
+        <td>23CS1001</td>
+        <td>8.5</td>
+    </tr>
+    <tr>
+        <td>23CS1002</td>
+        <td>8.7</td>
+    </tr>
+
+    <tr>
+        <td>Priya Sharma</td>
+        <td>23CS1003</td>
+        <td>9.2</td>
+    </tr>
+
+    <tr>
+        <td>Aman Verma</td>
+        <td>23CS1004</td>
+        <td>7.8</td>
+    </tr>
+
+    <tr>
+        <td>Neha Saini</td>
+        <td>23CS1005</td>
+        <td>9.0</td>
+    </tr>
+
+    <tr>
+        <td>Rahul Yadav</td>
+        <td>23CS1006</td>
+        <td>8.4</td>
+    </tr>
+
+    <tr>
+        <td>Anjali Mehra</td>
+        <td>23CS1007</td>
+        <td>8.9</td>
+    </tr>
+
+    <tr>
+        <td>Mohit Singh</td>
+        <td>23CS1008</td>
+        <td>7.5</td>
+    </tr>
+
+    <tr>
+        <td>Divya Chauhan</td>
+        <td>23CS1009</td>
+        <td>8.6</td>
+    </tr>
+
+    <tr>
+        <td>Aditya Rana</td>
+        <td>23CS1010</td>
+        <td>9.1</td>
+    </tr>
+</table>
+
+</body>
+</html>

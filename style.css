@@ -1,44 +1,42 @@
-body.bg {
-  background-image: url('background.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  color: white;
-  font-family: Verdana, sans-serif;
-  padding: 20px;
+body{
+	background-color:#24221d;
 }
-p{
-	color:#cadbce;
-}
-h1{
-	color:black;
-	text-decoration:underline;
-	background-color:#34eb64; display:inline-block;
-}
-p{
-	font-family: Verdana;
-}
-nav {
-  background-color: rgba(0, 100, 0, 0.6);
-  padding: 10px;
+h1 {
+  color: red;
+  background-color: #4f2c6e;
   text-align: center;
-  border-radius: 10px;
+
+  width: 200px;
+  height: 50px;
+  line-height: 50px;
+  border-radius: 10%;
+  margin: 10px auto; 
+}
+h2{
+	color: white;
 }
 
-nav a {
-  color: #ffffff;
-  text-decoration: none;
-  margin: 0 20px;
-  font-size: 18px;
-  font-weight: bold;
+p{
+	color: white;font-weight:900;
 }
+ul{
+	
+	color:yellow;
+	
+}
+ol{
+	color:yellow;
+	
+}
+table{
+	color:yellow;
+}
+selector{
+	border-color:yellow;
+	
+}
+th{
+	color: white;
+}
+.mytable,tr,th,td{border:1px solid red;}
 
-nav a:hover {
-  color: yellow;
-  text-decoration: underline;
-}
-
-img {
-  margin-top: 20px;
-  border-radius: 12px;
-  border: 3px solid white;
-}
