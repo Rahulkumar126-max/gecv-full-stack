@@ -1,0 +1,194 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Information Form</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        
+        body {
+            margin: 0px;
+            padding: 20px;
+            background-color: red;
+        }
+        
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 25px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        
+        input[type="text"],
+        input[type="tel"],
+        input[type="email"],
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        
+        .radio-group, .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .radio-option, .checkbox-option {
+            display: flex;
+            align-items: center;
+        }
+        
+        .radio-option input, .checkbox-option input {
+            margin-right: 5px;
+        }
+        
+        .button-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 30px;
+        }
+        
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            flex: 1;
+        }
+        
+        .submit-btn {
+            background-color: #4CAF50;
+            color: white;
+        }
+        
+        .submit-btn:hover {
+            background-color: #45a049;
+        }
+        
+        .reset-btn {
+            background-color: #f44336;
+            color: white;
+        }
+        
+        .reset-btn:hover {
+            background-color: #d32f2f;
+        }
+        
+        @media (max-width: 480px) {
+            .radio-group, .checkbox-group {
+                flex-direction: column;
+                gap: 8px;
+            }
+            
+            .button-group {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Basic Information Form</h1>
+        <form>
+            <div class="form-group">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required placeholder="Enter your full name">
+            </div>
+            
+            <div class="form-group">
+                <label for="mobile">Mobile Number:</label>
+                <input type="tel" id="mobile" name="mobile" required placeholder="Enter your mobile number">
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required placeholder="Enter your email address">
+            </div>
+            
+            <div class="form-group">
+                <label>Gender:</label>
+                <div class="radio-group">
+                    <div class="radio-option">
+                        <input type="radio" id="male" name="gender" value="male" required>
+                        <label for="male">Male</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="female" name="gender" value="female">
+                        <label for="female">Female</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="other" name="gender" value="other">
+                        <label for="other">Other</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label>Education Completed:</label>
+                <div class="checkbox-group">
+                    <div class="checkbox-option">
+                        <input type="checkbox" id="highschool" name="education" value="highschool">
+                        <label for="highschool">High School</label>
+                    </div>
+                    <div class="checkbox-option">
+                        <input type="checkbox" id="bachelor" name="education" value="bachelor">
+                        <label for="bachelor">Bachelor's Degree</label>
+                    </div>
+                    <div class="checkbox-option">
+                        <input type="checkbox" id="master" name="education" value="master">
+                        <label for="master">Master's Degree</label>
+                    </div>
+                    <div class="checkbox-option">
+                        <input type="checkbox" id="phd" name="education" value="phd">
+                        <label for="phd">PhD</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="tea">Do you like tea?</label>
+                <select id="tea" name="tea" required>
+                    <option value="" disabled selected>Select an option</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                    <option value="sometimes">Sometimes</option>
+                </select>
+            </div>
+            
+            <div class="button-group">
+                <button type="submit" class="submit-btn">Submit</button>
+                <button type="reset" class="reset-btn">Reset</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
+
+
