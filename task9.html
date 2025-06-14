@@ -1,62 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Simple Webpage</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color:red;
-    }
-
-    .navbar {
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      background-color:#ffffff;
-      padding: 20px 0;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-
-    .nav-item {
-      text-align: center;
-      width: 100px;
-    }
-
-    .nav-item img {
-      width: 40px;
-      height: 40px;
-      margin-bottom: 10px;
-    }
-
-    .nav-item h3 {
-      margin: 0;
-      font-size: 18px;
-      color: #333;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>Simple Webpage</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        nav {
+            background: #f0f0f0;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 20px 0;
+        }
+        nav a {
+            text-decoration: none;
+            color: black;
+            text-align: center;
+            font-size: 16px;
+        }
+        nav a:hover {
+            color: #ff0000;
+        }
+        .section {
+            height: 100vh;
+            padding: 50px;
+            color: white;
+        }
+        #home { background: tomato; }
+        #about { background: steelblue; }
+        #gallery { background: darkgreen; }
+        #contact { background: darkslategray; }
+    </style>
 </head>
 <body>
 
-  <div class="navbar">
-    <div class="nav-item">
-      <img src="https://img.icons8.com/ios-filled/50/home.png" alt="Home Icon">
-      <h3>Home</h3>
-    </div>
-    <div class="nav-item">
-      <img src="https://img.icons8.com/ios-filled/50/about.png" alt="About Icon">
-      <h3>About</h3>
-    </div>
-    <div class="nav-item">
-      <img src="https://img.icons8.com/ios-filled/50/picture.png" alt="Gallery Icon">
-      <h3>Gallery</h3>
-    </div>
-    <div class="nav-item">
-      <img src="https://img.icons8.com/ios-filled/50/contacts.png" alt="Contact Icon">
-      <h3>Contact</h3>
-    </div>
-  </div>
+<nav>
+    <a href="#home">
+        <div>🏠<br>Home</div>
+    </a>
+    <a href="#about">
+        <div>💬<br>About</div>
+    </a>
+    <a href="#gallery">
+        <div>🖼<br>Gallery</div>
+    </a>
+    <a href="#contact">
+        <div>👤<br>Contact</div>
+    </a>
+</nav>
+
+<div id="home" class="section">
+    <h1>Home Section</h1>
+</div>
+<div id="about" class="section">
+    <h1>About Section</h1>
+</div>
+<div id="gallery" class="section">
+    <h1>Gallery Section</h1>
+</div>
+<div id="contact" class="section">
+    <h1>Contact Section</h1>
+</div>
 
 </body>
 </html>

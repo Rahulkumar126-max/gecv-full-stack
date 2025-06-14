@@ -3,87 +3,230 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Sarkari Result - Clone</title>
-  <link rel="stylesheet" href="style.css"/>
+  <title>Sarkari Result Clone</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fff;
+    }
+
+    /* HEADER SECTION */
+    .header {
+      background-color: #cc0033;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+      position: relative;
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 36px;
+    }
+
+    .header p {
+      margin: 5px 0 0;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .logo {
+      position: absolute;
+      top: 10px;
+      left: 20px;
+    }
+
+    .logo img {
+      width: 100px;
+    }
+
+    /* NAVIGATION BAR */
+    .navbar {
+      background-color: #000;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .navbar a {
+      color: white;
+      padding: 14px 20px;
+      text-decoration: none;
+      display: block;
+      font-weight: bold;
+    }
+
+    .navbar a:hover {
+      background-color: #444;
+    }
+
+    /* TOP BUTTONS */
+    .top-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 10px;
+    }
+
+    .top-buttons a {
+      color: white;
+      padding: 10px 15px;
+      margin: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 4px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    .btn-yellow { background: olive; }
+    .btn-red { background: red; }
+    .btn-blue { background: royalblue; }
+    .btn-orange { background: orangered; }
+    .btn-green { background: darkgreen; }
+    .btn-pink { background: hotpink; }
+    .btn-maroon { background: maroon; }
+
+    .main-content {
+      text-align: center;
+      padding: 10px;
+    }
+
+    .sections {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      padding: 20px;
+    }
+
+    .box {
+      width: 300px;
+      border: 1px solid #ddd;
+      padding: 10px;
+    }
+
+    .box h2 {
+      background: maroon;
+      color: white;
+      margin: 0;
+      padding: 8px;
+      font-size: 18px;
+    }
+
+    .box ul {
+      list-style: none;
+      padding: 10px;
+      margin: 0;
+    }
+
+    .box ul li {
+      text-align: left;
+      margin-bottom: 8px;
+    }
+
+    .box ul li a {
+      color: blue;
+      text-decoration: none;
+    }
+
+    .box ul li a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .header h1 {
+        font-size: 24px;
+      }
+
+      .navbar a {
+        padding: 10px;
+        font-size: 14px;
+      }
+
+      .logo img {
+        width: 80px;
+      }
+
+      .box {
+        width: 90%;
+      }
+    }
+  </style>
 </head>
 <body>
 
-  <header>
-    <div class="container">
-      <h1>SARKARI RESULT</h1>
-      <p>www.sarkariresult.com</p>
+  <!-- HEADER -->
+  <div class="header">
+    <div class="logo">
+      <img src="https://sarkariresult.com/images/logo-new.png" alt="Sarkari Result Logo">
     </div>
-  </header>
+    <h1>SARKARI RESULT</h1>
+    <p>WWW.SARKARIRESULT.COM</p>
+  </div>
 
-  <nav class="navbar">
-    <div class="container">
-      <a href="#">Home</a>
-      <a href="#">Latest Jobs</a>
-      <a href="#">Results</a>
-      <a href="#">Admit Card</a>
-      <a href="#">Answer Key</a>
-      <a href="#">Syllabus</a>
-      <a href="#">Contact</a>
-    </div>
-  </nav>
+  <!-- NAVBAR -->
+  <div class="navbar">
+    <a href="#">Home</a>
+    <a href="#">Latest Jobs</a>
+    <a href="#">Results</a>
+    <a href="#">Admit Card</a>
+    <a href="#">Answer Key</a>
+    <a href="#">Syllabus</a>
+    <a href="#">Search</a>
+    <a href="#">Contact Us</a>
+  </div>
 
-  <section class="search-bar container">
-    <input type="text" placeholder="Search Job, Result, Admit Card..." />
-  </section>
+  <!-- TOP BUTTONS -->
+  <div class="top-buttons">
+    <a href="#" class="btn-yellow">UPSSSC PET 2025<br>Apply Online</a>
+    <a href="#" class="btn-blue">UPSC CDS II 2025<br>Apply Online</a>
+    <a href="#" class="btn-orange">UPSC NDA II 2025<br>Apply Online</a>
+    <a href="#" class="btn-maroon">UPBED 2025<br>Admit Card</a>
+    <a href="#" class="btn-red">UP ITI Admissions<br>Apply Online</a>
+    <a href="#" class="btn-green">BPSC 71th Pre<br>Apply Online</a>
+    <a href="#" class="btn-pink">UPESSC Asst Professor<br>Apply Online</a>
+    <a href="#" class="btn-blue">Railway RRB NTPC<br>Admit Card</a>
+  </div>
 
-  <section class="notice">
-    <div class="container">
-      <marquee>Welcome to Sarkari Result Clone | सरकारी नौकरी की ताज़ा जानकारी यहाँ पाएं | Stay Updated with Latest Exams</marquee>
-    </div>
-  </section>
-
-  <main class="container main-content">
-    <div class="left">
-      <h2>Latest Jobs</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Post Name</th>
-            <th>Last Date</th>
-            <th>Apply</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>UP Police Constable</td>
-            <td>25 June 2025</td>
-            <td><a class="btn" href="#">Apply Now</a></td>
-          </tr>
-          <tr>
-            <td>SSC CGL 2025</td>
-            <td>30 June 2025</td>
-            <td><a class="btn" href="#">Apply Now</a></td>
-          </tr>
-          <tr>
-            <td>Railway NTPC</td>
-            <td>15 July 2025</td>
-            <td><a class="btn" href="#">Apply Now</a></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div class="right">
-      <h2>Admit Card / Result</h2>
-      <ul class="downloads">
-        <li><a href="#">CTET Result 2025 <span class="badge">Download PDF</span></a></li>
-        <li><a href="#">SSC GD Admit Card <span class="badge">Download</span></a></li>
-        <li><a href="#">UPSC CDS II Result <span class="badge">Download</span></a></li>
-        <li><a href="#">BPSC 69th Admit Card <span class="badge">Download</span></a></li>
+  <!-- MAIN BOXES -->
+  <div class="sections">
+    <div class="box">
+      <h2>Result</h2>
+      <ul>
+        <li><a href="#">UPSC Civil Services IAS / IFS Pre Result 2025</a></li>
+        <li><a href="#">SBI Clerk Mains Result 2025</a></li>
+        <li><a href="#">Bihar CET BEd 2 Year Course Result 2025</a></li>
+        <li><a href="#">Jharkhand Board JAC Result 2025</a></li>
+        <li><a href="#">UPSC CDS II 2024 Marks</a></li>
       </ul>
     </div>
-  </main>
 
-  <footer>
-    <div class="container">
-      <p> 2025 Sarkari Result Clone. All rights reserved.</p>
+    <div class="box">
+      <h2>Admit Card</h2>
+      <ul>
+        <li><a href="#">NEET PG 2025 Choose Exam City</a></li>
+        <li><a href="#">Rajasthan PTET Admit Card 2025</a></li>
+        <li><a href="#">CSBC Bihar Police Constable Exam Date 2025</a></li>
+        <li><a href="#">MPESB ANM 2025 Admit Card</a></li>
+        <li><a href="#">Union Bank Admit Card 2025</a></li>
+      </ul>
     </div>
-  </footer>
+
+    <div class="box">
+      <h2>Latest Jobs</h2>
+      <ul>
+        <li><a href="#">Coast Guard Navik / Yantrik 2026 Online Form</a></li>
+        <li><a href="#">BPSC Motor Vehicle Inspector Online Form 2025</a></li>
+        <li><a href="#">UPESSC Assistant Professor Extended Form</a></li>
+        <li><a href="#">SSC CGL 2025 Online Form</a></li>
+        <li><a href="#">Bihar BTSC Staff Nurse Online Form</a></li>
+      </ul>
+    </div>
+  </div>
 
 </body>
 </html>
