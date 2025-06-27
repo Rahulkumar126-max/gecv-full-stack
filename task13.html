@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Programs</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #f4f4f4;
+        }
+        h1 {
+            color: #333;
+        }
+        .output {
+            background: #fff;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-left: 5px solid #007BFF;
+        }
+    </style>
+</head>
+<body>
+    <h1>JavaScript Program Outputs</h1>
+
+    <div id="output1" class="output"></div>
+    <div id="output2" class="output"></div>
+    <div id="output3" class="output"></div>
+    <div id="output4" class="output"></div>
+    <div id="output5" class="output"></div>
+
+    <script>
+        // 1. Print name and address
+        const name = "Rahul kumar";
+        const address = "Rafiganj , aurangabad (bihar)";
+        document.getElementById("output1").innerHTML = 
+            "<strong>1. Name and Address:</strong><br>Name: " + name + "<br>Address: " + address;
+
+        // 2. Check if value and datatype are same
+        const a = 10;
+        const b = "10";
+        const checkResult = (a === b) 
+            ? "Both value and data-type are the same." 
+            : "Either value or data-type is different.";
+        document.getElementById("output2").innerHTML = 
+            "<strong>2. Value and Data-type Check:</strong><br>" + checkResult;
+
+        // 3. Add two strings and capitalize
+        function addAndCapitalize(str1, str2) {
+            return (str1 + str2).toUpperCase();
+        }
+        const result3 = addAndCapitalize("hello", "world");
+        document.getElementById("output3").innerHTML = 
+            "<strong>3. Add and Capitalize Strings:</strong><br>" + result3;
+
+        // 4. String length in bytes
+        function getStringSizeInBytes(str) {
+            return new TextEncoder().encode(str).length;
+        }
+        const inputStr = "Hello";
+        const byteLength = getStringSizeInBytes(inputStr);
+        document.getElementById("output4").innerHTML = 
+            "<strong>4. String Byte Length:</strong><br>Byte length of '" + inputStr + "': " + byteLength;
+
+        // 5. Round number to specified digits
+        function roundToDigits(num, digits) {
+            return Number(num.toFixed(digits));
+        }
+        const roundedValue = roundToDigits(3.1415926535, 2);
+        document.getElementById("output5").innerHTML = 
+            "<strong>5. Rounded Number:</strong><br>" + roundedValue;
+    </script>
+</body>
+</html>
