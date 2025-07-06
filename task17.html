@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>JavaScript Exception Handling</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #e0f7fa, #f1f8e9);
+      padding: 30px;
+      color: #333;
+    }
+    .task {
+      background: #ffffff;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 20px;
+      margin-bottom: 30px;
+      transition: transform 0.3s;
+    }
+    .task:hover {
+      transform: scale(1.01);
+    }
+    h2 {
+      color: #00695c;
+    }
+    button {
+      margin-top: 10px;
+      padding: 10px 18px;
+      font-weight: bold;
+      color: #fff;
+      background: #00796b;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+    button:hover {
+      background: #004d40;
+    }
+    pre {
+      background-color: #f1f8e9;
+      padding: 12px;
+      border-left: 5px solid #aed581;
+      border-radius: 8px;
+      margin-top: 15px;
+      font-family: monospace;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Task 1: Undeclared Variable Exception -->
+  <div class="task">
+    <h2>1. Handle Exception: Undeclared Variable</h2>
+    <button onclick="handleUndeclaredVariable()">Run</button>
+    <pre id="output1"></pre>
+  </div>
+
+  <!-- Task 2: Divide by Zero Exception -->
+  <div class="task">
+    <h2>2. Throw "Divide by Zero" Error</h2>
+    <button onclick="handleDivideByZero()">Run</button>
+    <pre id="output2"></pre>
+  </div>
+
+  <!-- Task 3: Array Out of Bounds Error -->
+  <div class="task">
+    <h2>3. Throw "Out of Bounds" Error</h2>
+    <button onclick="handleOutOfBounds()">Run</button>
+    <pre id="output3"></pre>
+  </div>
+
+  <!-- Task 4: Try-Finally Exception Handling -->
+  <div class="task">
+    <h2>4. Exception Handling with Finally</h2>
+    <button onclick="handleFinallyBlock()">Run</button>
+    <pre id="output4"></pre>
+  </div>
+
+  <script>
+    // Task 1: Handle Undeclared Variable
+    function handleUndeclaredVariable() {
+      try {
+        let result = x + 5; // x is not declared
+      } catch (error) {
+        document.getElementById("output1").innerText = Caught Exception: ${error};
+      }
+    }
+
+    // Task 2: Divide by Zero Custom Throw
+    function handleDivideByZero() {
+      try {
+        let a = 10, b = 0;
+        if (b === 0) {
+          throw new Error("Divide by Zero Error");
+        }
+        let result = a / b;
+      } catch (error) {
+        document.getElementById("output2").innerText = Caught Exception: ${error.message};
+      }
+    }
+
+    // Task 3: Array Out of Bound Error
+    function handleOutOfBounds() {
+      try {
+        let arr = [10, 20, 30];
+        let index = 5;
+        if (index >= arr.length) {
+          throw new Error("Out of Bound Error");
+        }
+        let value = arr[index];
+      } catch (error) {
+        document.getElementById("output3").innerText = Caught Exception: ${error.message};
+      }
+    }
+
+    // Task 4: Exception Handling with finally
+    function handleFinallyBlock() {
+      let output = "";
+      try {
+        let num = 5;
+        let result = num / 0;
+        if (!isFinite(result)) {
+          throw new Error("Invalid division");
+        }
+        output = "Result is: " + result;
+      } catch (error) {
+        output = Caught Exception: ${error.message};
+      } finally {
+        output += "\nThis block always runs (finally).";
+        document.getElementById("output4").innerText = output;
+      }
+    }
+  </script>
+
+</body>
+</html>
