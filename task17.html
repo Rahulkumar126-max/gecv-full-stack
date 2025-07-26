@@ -1,57 +1,58 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Javascript</title>
+    <title>JavaScript Exception Handling</title>
 </head>
 <body>
-    
-    <div id="output"></div>
 
-    <script>
-        let output = document.getElementById("output");
+<div id="output"></div>
 
-        // 1. Handling exception caused by printing variable without declaring it
-        try {
-            console.log(x);
-        } catch (error) {
-            output.innerHTML += "<p>Error: Variable x is not defined.</p>";
+<script>
+    let output = document.getElementById("output");
+
+    // 1. Handling exception caused by printing variable without declaring it
+    try {
+        console.log(x); // x is not declared
+    } catch (error) {
+        output.innerHTML += "<p>Error: Variable x is not defined.</p>";
+    }
+
+    // 2. Throwing "divide by Zero" error
+    function divide(a, b) {
+        if (b === 0) {
+            throw new Error("Cannot divide by zero!");
         }
+        return a / b;
+    }
 
-        // 2. Throwing "divide by Zero" error
-        function divide(a, b) {
-            if (b === 0) {
-                throw new Error("Cannot divide by zero!");
-            }
-            return a / b;
+    try {
+        divide(10, 0);
+    } catch (error) {
+        output.innerHTML += `<p>Error: ${error.message}</p>`;
+    }
+
+    // 3. Throwing "out of bound error"
+    let arr = [1, 2, 3];
+
+    try {
+        if (3 < arr.length) {
+            console.log(arr[3]);
+        } else {
+            throw new Error("Index out of bounds!");
         }
+    } catch (error) {
+        output.innerHTML += `<p>Error: ${error.message}</p>`;
+    }
 
-        try {
-            divide(10, 0);
-        } catch (error) {
-            output.innerHTML += <p>Error: ${error.message}</p>;
-        }
+    // 4. Exception handling using finally statement
+    try {
+        divide(10, 0);
+    } catch (error) {
+        output.innerHTML += `<p>Error: ${error.message}</p>`;
+    } finally {
+        output.innerHTML += "<p>Finally block executed.</p>";
+    }
+</script>
 
-        // 3. Throwing "out of bound error"
-        let arr = [1, 2, 3];
-
-        try {
-            if (3 < arr.length) {
-                console.log(arr[3]);
-            } else {
-                throw new Error("Index out of bounds!");
-            }
-        } catch (error) {
-            output.innerHTML += <p>Error: ${error.message}</p>;
-        }
-
-        // 4. Exception handling using finally statement
-        try {
-            divide(10, 0);
-        } catch (error) {
-            output.innerHTML += <p>Error: ${error.message}</p>;
-        } finally {
-            output.innerHTML += "<p>Finally block executed.</p>";
-        }
-    </script>
 </body>
 </html>
