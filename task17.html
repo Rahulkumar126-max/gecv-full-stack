@@ -1,88 +1,109 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>JavaScript Exception Handling Examples</title>
+  <title>JS Exception Handling with User Input</title>
   <style>
-    body { font-family: Arial; background-color: #f0f8ff; padding: 20px; }
+    body { font-family: Arial; background-color: #f2f9ff; padding: 20px; }
     h2 { color: #003366; }
-    .section { margin-bottom: 30px; padding: 15px; border: 1px solid #ccc; background-color: #ffffff; border-radius: 8px; }
-    .output { color: #cc0000; font-weight: bold; margin-top: 10px; }
+    .section {
+      margin-bottom: 30px;
+      padding: 20px;
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    label, input, button { display: block; margin-top: 10px; }
+    .output { margin-top: 10px; color: red; font-weight: bold; }
   </style>
 </head>
 <body>
 
-  <h1>JavaScript Exception Handling Examples</h1>
+  <h1>JavaScript Exception Handling with User Input</h1>
 
-  <!-- 1. Undeclared Variable Exception -->
+  <!-- 1. Undeclared Variable -->
   <div class="section">
-    <h2>1. Handle Exception Caused by Undeclared Variable</h2>
+    <h2>1. Undeclared Variable Exception</h2>
+    <button onclick="handleUndeclaredVariable()">Run</button>
     <div class="output" id="output1"></div>
-    <script>
-      try {
-        console.log(x); // x is not declared
-      } catch (error) {
-        document.getElementById("output1").innerHTML = "Caught an error: " + error.message;
-      }
-    </script>
   </div>
 
-  <!-- 2. Divide by Zero using throw -->
+  <!-- 2. Divide by Zero -->
   <div class="section">
-    <h2>2. Throw "Divide by Zero" Error</h2>
+    <h2>2. Divide by Zero Exception</h2>
+    <label>Enter Numerator:</label>
+    <input type="number" id="num1">
+    <label>Enter Denominator:</label>
+    <input type="number" id="num2">
+    <button onclick="handleDivideByZero()">Divide</button>
     <div class="output" id="output2"></div>
-    <script>
-      function divide(a, b) {
-        if (b === 0) {
-          throw new Error("Divide by Zero Error");
-        }
-        return a / b;
-      }
-
-      try {
-        let result = divide(10, 0);
-        document.getElementById("output2").innerHTML = "Result: " + result;
-      } catch (error) {
-        document.getElementById("output2").innerHTML = "Caught an error: " + error.message;
-      }
-    </script>
   </div>
 
-  <!-- 3. Out of Bound Error using throw -->
+  <!-- 3. Array Out of Bound -->
   <div class="section">
-    <h2>3. Throw "Array Index Out of Bound" Error</h2>
+    <h2>3. Array Index Out of Bound Exception</h2>
+    <label>Enter Array Index (0 to 2):</label>
+    <input type="number" id="arrayIndex">
+    <button onclick="handleArrayOutOfBound()">Access Array</button>
     <div class="output" id="output3"></div>
-    <script>
-      const arr = [10, 20, 30];
-      try {
-        let index = 5;
-        if (index >= arr.length) {
-          throw new Error("Array Index Out of Bound");
-        }
-        document.getElementById("output3").innerHTML = "Value: " + arr[index];
-      } catch (error) {
-        document.getElementById("output3").innerHTML = "Caught an error: " + error.message;
-      }
-    </script>
   </div>
 
-  <!-- 4. Exception Handling with finally -->
+  <!-- 4. Exception with Finally -->
   <div class="section">
-    <h2>4. Exception Handling using finally</h2>
+    <h2>4. Exception Handling with finally</h2>
+    <label>Enter a number to divide 100 with:</label>
+    <input type="number" id="finalInput">
+    <button onclick="handleFinallyExample()">Run</button>
     <div class="output" id="output4"></div>
-    <script>
+  </div>
+
+  <script>
+    // 1. Undeclared Variable
+    function handleUndeclaredVariable() {
       try {
-        let num = 10 / 0;
-        if (!isFinite(num)) {
-          throw new Error("Divide by Zero Detected");
-        }
-        document.getElementById("output4").innerHTML = "Result: " + num;
+        console.log(notDeclared); // not declared variable
       } catch (error) {
-        document.getElementById("output4").innerHTML = "Caught an error: " + error.message;
+        document.getElementById("output1").innerText = "Caught an error: " + error.message;
+      }
+    }
+
+    // 2. Divide by Zero
+    function handleDivideByZero() {
+      const num1 = parseFloat(document.getElementById("num1").value);
+      const num2 = parseFloat(document.getElementById("num2").value);
+      try {
+        if (num2 === 0) throw new Error("Divide by Zero Error");
+        document.getElementById("output2").innerText = "Result: " + (num1 / num2);
+      } catch (error) {
+        document.getElementById("output2").innerText = "Caught an error: " + error.message;
+      }
+    }
+
+    // 3. Array Index Out of Bound
+    function handleArrayOutOfBound() {
+      const arr = [100, 200, 300];
+      const index = parseInt(document.getElementById("arrayIndex").value);
+      try {
+        if (index < 0 || index >= arr.length) throw new Error("Array Index Out of Bound");
+        document.getElementById("output3").innerText = "Value at index " + index + ": " + arr[index];
+      } catch (error) {
+        document.getElementById("output3").innerText = "Caught an error: " + error.message;
+      }
+    }
+
+    // 4. Finally Block Example
+    function handleFinallyExample() {
+      const input = parseFloat(document.getElementById("finalInput").value);
+      try {
+        if (input === 0) throw new Error("Cannot divide by zero");
+        let result = 100 / input;
+        document.getElementById("output4").innerText = "Result: " + result;
+      } catch (error) {
+        document.getElementById("output4").innerText = "Caught an error: " + error.message;
       } finally {
         document.getElementById("output4").innerHTML += "<br>Finally block executed.";
       }
-    </script>
-  </div>
+    }
+  </script>
 
 </body>
 </html>
