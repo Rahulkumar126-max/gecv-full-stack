@@ -1,182 +1,116 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Interactive JavaScript Tasks</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      padding: 20px;
-      background: linear-gradient(to right, #c3fdff, #e0f7fa);
-      color: #333;
-    }
-    h2 {
-      color: #01579b;
-    }
-    form, .task {
-      margin-bottom: 30px;
-      padding: 20px;
-      background: #ffffff;
-      border-radius: 15px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-      transition: transform 0.3s;
-    }
-    form:hover, .task:hover {
-      transform: scale(1.01);
-    }
-    label {
-      display: block;
-      margin-top: 10px;
-      font-weight: bold;
-    }
-    input, textarea {
-      width: 100%;
-      padding: 10px;
-      margin-top: 5px;
-      border: 1px solid #90caf9;
-      border-radius: 8px;
-      transition: border-color 0.3s;
-    }
-    input:focus, textarea:focus {
-      border-color: #1976d2;
-      outline: none;
-    }
-    button {
-      margin-top: 15px;
-      padding: 10px 20px;
-      background: #1976d2;
-      border: none;
-      color: white;
-      border-radius: 8px;
-      cursor: pointer;
-      font-weight: bold;
-      transition: background 0.3s, transform 0.2s;
-    }
-    button:hover {
-      background: #0d47a1;
-      transform: scale(1.05);
-    }
-    #displayInfo {
-      margin-top: 15px;
-      padding: 12px;
-      background-color: #e3f2fd;
-      border-left: 5px solid #42a5f5;
-      border-radius: 8px;
-      animation: fadeIn 0.6s ease-in-out;
-    }
-    #textArea {
-      margin-top: 10px;
-      transition: font-size 0.3s ease-in-out;
-    }
-    img {
-      max-width: 100%;
-      height: auto;
-      margin-top: 10px;
-      border: 3px solid #90caf9;
-      border-radius: 12px;
-      transition: transform 0.4s;
-    }
-    img:hover {
-      transform: scale(1.02) rotate(1deg);
-    }
-    #dateTime {
-      font-size: 1.2em;
-      margin-top: 10px;
-      font-weight: bold;
-      color: #00695c;
-      background: #e0f2f1;
-      padding: 10px;
-      border-radius: 10px;
-      animation: fadeIn 0.8s ease-in-out;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-  </style>
+<title>JavaScript</title>
 </head>
 <body>
+<h1>Basic Information Form</h1>
+<form id="myForm">
+<label for="name">Name:</label>
+<input type="text" id="name" name="name"><br><br>
+<label for="email">Email:</label>
+<input type="email" id="email" name="email"><br><br>
+<label for="phone">Phone:</label>
+<input type="number" id="phone" name="phone"><br><br>
+<input type="button" value="Submit" onclick="displayInfo()">
+</form>
+<div id="displayInfo"></div>
 
-  <!-- Task 1: Basic Info Form -->
-  <div class="task">
-    <h2>1. Basic Information Form</h2>
-    <form id="infoForm">
-      <label for="name">Name:</label>
-      <input type="text" id="name" required>
+<script>
+function displayInfo() {
+let name = document.getElementById("name").value;
+let email = document.getElementById("email").value;
+let phone = document.getElementById("phone").value;
 
-      <label for="email">Email:</label>
-      <input type="email" id="email" required>
+let displayDiv = document.getElementById("displayInfo");
+displayDiv.innerHTML = "Name: " + name + "<br>Email: " + email + "<br>Phone: " + phone;
+}
+</script>
+</body>
+</html>
+<br><br>
 
-      <label for="address">Address:</label>
-      <textarea id="address" rows="3" required></textarea>
 
-      <button type="button" onclick="showInfo()">Submit</button>
-    </form>
-    <div id="displayInfo"></div>
-  </div>
 
-  <!-- Task 2: Change Image -->
-  <div class="task">
-    <h2>2. Change Image on Button Click</h2>
-    <button onclick="changeImage()">Change Image</button><br>
-    <img id="myImage" src="https://via.placeholder.com/300x200?text=Original+Image" alt="Image">
-  </div>
+<!DOCTYPE html>
+<html>
+<head>
+<title>JavaScript</title>
+</head>
+<body>
+<h1>Change Image</h1>
+<img id="myImage" src="virat.jpg" width="330" height="400">
+<button onclick="changeImage()">Change Image</button>
 
-  <!-- Task 3: Font Size Change -->
-  <div class="task">
-    <h2>3. Increase / Decrease Font Size</h2>
-    <button onclick="changeFontSize('increase')">Increase</button>
-    <button onclick="changeFontSize('decrease')">Decrease</button>
-    <p id="textArea">This is a sample text. Click the buttons to change its font size.</p>
-  </div>
+<script>
+function changeImage() {
+let image = document.getElementById("myImage");
+if (image.src.includes("virat.jpg")) {
+image.src = "virat1.jpg";
+} 
+else {
+image.src = "virat.jpg";
+}
+}
+</script>
+</body>
+</html>
+<br><br>
 
-  <!-- Task 4: Date & Time -->
-  <div class="task">
-    <h2>4. Show Current Date & Time</h2>
-    <button onclick="showDateTime()">Show Date & Time</button>
-    <p id="dateTime"></p>
-  </div>
 
-  <script>
-    // Task 1
-    function showInfo() {
-      const name = document.getElementById("name").value;
-      const email = document.getElementById("email").value;
-      const address = document.getElementById("address").value;
+<!DOCTYPE html>
+<html>
+<head>
+<title>JavaScript</title>
+<style>
+#myText {font-size: 16px;
+        }
+</style>
+</head>
+<body>
+<h1>Font Size</h1>
+<p id="myText">This is a sample text.</p>
+<button onclick="increaseFontSize()">Increase Font Size</button>
+<button onclick="decreaseFontSize()">Decrease Font Size</button>
 
-      const display = `
-        <strong>Name:</strong> ${name} <br>
-        <strong>Email:</strong> ${email} <br>
-        <strong>Address:</strong> ${address}
-      `;
-      document.getElementById("displayInfo").innerHTML = display;
-    }
+<script>
+let fontSize = 16;
+function increaseFontSize() {
+fontSize += 2;
+document.getElementById("myText").style.fontSize = fontSize + "px";
+}
 
-    // Task 2
-    function changeImage() {
-      const img = document.getElementById("myImage");
-      img.src = "https://via.placeholder.com/300x200?text=New+Image";
-    }
+function decreaseFontSize() {
+fontSize -= 2;
+if (fontSize < 8) {
+fontSize = 8;
+}
+document.getElementById("myText").style.fontSize = fontSize + "px";
+}
+</script>
+</body>
+</html>
+<br><br>
 
-    // Task 3
-    let fontSize = 16;
-    function changeFontSize(action) {
-      if (action === 'increase') {
-        fontSize += 2;
-      } else if (action === 'decrease' && fontSize > 10) {
-        fontSize -= 2;
-      }
-      document.getElementById("textArea").style.fontSize = fontSize + "px";
-    }
 
-    // Task 4
-    function showDateTime() {
-      const now = new Date();
-      document.getElementById("dateTime").innerText = now.toLocaleString();
-    }
-  </script>
+<!DOCTYPE html>
+<html>
+<head>
+<title>JavaScript</title>
+</head>
+<body>
+<h1>Current Date and Time</h1>
+<p id="currentDateTime"></p>
 
+<script>
+function displayCurrentDateTime() {
+let currentDate = new Date();
+let dateTimeString = currentDate.toLocaleDateString() + " " + currentDate.toLocaleTimeString();
+document.getElementById("currentDateTime").innerHTML = dateTimeString;
+}
+
+displayCurrentDateTime();
+setInterval(displayCurrentDateTime, 1000);
+</script>
 </body>
 </html>
